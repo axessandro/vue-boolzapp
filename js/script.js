@@ -172,9 +172,17 @@ createApp({
                 }
             ],
 
-           
+            indexMain: 0,
             
         }
+
+        
+    },
+
+    methods: {
+        showClicked(index){
+            this.indexMain = index;
+        },
     },
 
 }).mount("#root");
