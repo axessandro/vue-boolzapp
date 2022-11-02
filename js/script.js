@@ -179,6 +179,12 @@ createApp({
         
     },
 
+    created(){
+
+
+
+    },
+
     methods: {
         showClicked(index){
             this.indexMain = index;
