@@ -174,21 +174,44 @@ createApp({
 
             indexMain: 0,
             
+            newMessage:{
+                date: '',
+                message: '',
+                status: 'sent',
+            },
+
+            botMessage:{
+                date: '',
+                message: 'ok campione',
+                status: 'received',
+            },
+
+            searchingContact: '',
+
         }
 
         
-    },
-
-    created(){
-
-
-
     },
 
     methods: {
         showClicked(index){
             this.indexMain = index;
         },
+
+        sendMessage(){
+            const messageToSend = {...this.newMessage};
+            this.contacts[this.indexMain].messages.push(messageToSend);
+            this.newMessage.message = '';
+
+            setTimeout(this.botSendMessage, 1000);
+        },
+
+        botSendMessage(){
+            const messageToSend = this.botMessage;
+            this.contacts[this.indexMain].messages.push(messageToSend);
+        }
     },
 
 }).mount("#root");
+
+console.log(this.time);

@@ -143,8 +143,11 @@ img{
     width: 80%;
     border: 0.5px solid #d4d4d4;
     padding-left: 1rem;
-    color: #0c0c0c;
+    color: #0c0c0c;    
+}
 
+.d-none{
+    display: none;
 }
 /* /search chat */
 
@@ -266,7 +269,9 @@ img{
     display: flex;
     justify-content: center;
     padding-top: 2rem;
+    overflow-y: scroll;
 }
+
 
 .container-messages{
     width: 80%;
@@ -280,9 +285,11 @@ img{
     min-width: 30%;
     max-width: 60%;
     border-radius: 10px;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
 }
 
-.recived{
+.received{
     background-color: #efefef;
     align-self: flex-start;
 }

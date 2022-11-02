@@ -48,7 +48,7 @@
                 <!-- search chat -->
                 <div class="search-chat">
                     <div class="btn"><i class="fa-solid fa-magnifying-glass"></i></div>
-                    <input type="text" placeholder="Cerca o inizia una nuiova chat">
+                    <input type="text" placeholder="Cerca o inizia una nuiova chat" v-model="searchingContact">
                 </div>
                 <!-- /search chat -->
 
@@ -75,8 +75,9 @@
 
             <!-- main -->
             <div class="main">
-                <div class="main-top-bar">
-                    
+
+                <!-- top main -->
+                <div class="main-top-bar">    
                     <div class="account-main">
                         <div class="contact">
                             <img :src="'img/avatar' + contacts[indexMain].avatar + '.jpg'" alt="">
@@ -93,30 +94,32 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
+                <!-- /top main -->
 
+                <!-- chat -->
                 <div class="chat">
                     <div class="container-messages">
                         <div class="message"
-                            v-for="message in contacts[inexMain].messages"
-                        >
-                        {{message.message}}
-                        
-                        </div>
-                        <!-- <div class="message sent">Ciao come stai</div>
-                        <div class="message recived">Bene</div> -->
+                            v-for="message in contacts[indexMain].messages"
+                            :class="message.status"
+                        >{{message.message}}</div>
                     </div>
-
                 </div>
+                <!-- chat -->
 
+
+                <!-- bottom main -->
                 <div class="main-bottom-bar">
                     <div class="emoji-btn">
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
-                    <input class="write-bar" type="text" placeholder="Scirvi un messaggio">
+                    <input class="write-bar" type="text" placeholder="Scirvi un messaggio" v-model="newMessage.message" @keyup.enter="sendMessage">
                     <div class="mic-btn">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
                 </div>
+                <!-- /bottom main -->
+
             </div>
             <!-- /main -->
 
