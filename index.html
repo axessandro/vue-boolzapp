@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzap</title>
+    <!-- link vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- link style -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- link fontawasome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="root">
+        <div class="container">
+            <!-- side -->
+            <div class="side">
+                <!-- user account bar -->
+                <div class="account-settings-bar">
+                    <div class="user-info">
+                        <div class="avatar-img"><img src="img/avatar_io.jpg" alt="user img"></div>
+                        <div class="username">Sofia</div>
+                    </div>
+
+                    <div class="side-settings">
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+
+                </div>
+                <!-- user account bar -->
+
+                <!-- banner notification -->
+                <div class="banner-notification">
+                    <div class="icon-notification">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <div class="text-notification">
+                        <p>Ricevi notifiche di nuovi messaggi</p>
+                        <a @click.prevent="">Attiva notifiche desktop</a>
+                    </div>
+                </div>
+                <!-- banner notification -->
+
+                <!-- search chat -->
+                <div class="search-chat">
+                    <div class="btn"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <input type="text" placeholder="Cerca o inizia una nuiova chat">
+                </div>
+                <!-- /search chat -->
+
+            </div>
+            <!-- /side -->
+
+            <div class="main">
+
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

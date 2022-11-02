@@ -1,0 +1,152 @@
+/* RESET */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #d4d4d4;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#root{
+    background-color: #0c0c0c;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* SIDE */
+.side{
+    width: 35%;
+    height: 100%;
+    background-color: rgb(65, 65, 65);
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: flex-start;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* account bar */
+.account-settings-bar{
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.user-info{
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-info .avatar-img{
+    height: 120%;
+}
+
+.user-info .avatar-img img{
+    height: 100%;
+    border-radius: 50%;
+}
+
+.side-settings{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: .5rem;
+}
+
+.side-settings i{
+    font-size: 1.3rem;
+    padding: 0 .5rem;
+}
+
+/* /account bar */
+
+/* banner-notification */
+.banner-notification{
+    width: 100%;
+    height: 10%;
+    background-color: #9FD8F8;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+}
+
+.icon-notification{
+    background-color: rgb(65, 65, 65);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.icon-notification i{
+    color: #9FD8F8;
+
+}
+
+.text-notification p{
+    color: #0c0c0c;
+    padding-left: .5rem;
+    font-size: 0.8rem;
+}
+
+.text-notification a{
+    color: rgb(65, 65, 65);
+    font-size: 0.7rem;
+    padding-left: .5rem;
+    text-decoration: underline;
+}
+/* /banner-notification */
+
+/* search chat */
+.search-chat{
+    display: flex;
+    height: 8%;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.search-chat .btn{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.5px solid #d4d4d4;
+}
+
+.search-chat input{
+    width: 80%;
+    border: 0.5px solid #d4d4d4;
+}
+/* /search chat */
+
+/* /SIDE */
+
+/* ------------------------------------------------------------ */
+
+/* MAIN */
+.main{
+    width: 65%;
+    background-color: rgb(28, 28, 28);
+}
+/* /MAIN */
