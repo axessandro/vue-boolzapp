@@ -221,16 +221,23 @@ createApp({
             this.contacts[this.indexMain].messages.push(messageToSend);
         },
 
-        searchingResults(){
-            
-        },
-
         gettingHour(){
             const now = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
             console.log(now);
             this.newMessage.date = now;
             this.botMessage.date = now;
         },
+
+        filterContacts(){
+            for(let i = 0; i < this.contacts.length; i++){
+                const contact = this.contacts[i];
+                const contactName = contact.name.toLowerCase();
+                if (!contactName.includes(this.searchingContact.toLowerCase()) && searchingContact) {
+                    contact.visible = false
+                }
+            }
+            
+        }
     },
 
 }).mount("#root");

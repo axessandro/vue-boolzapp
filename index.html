@@ -50,7 +50,7 @@
                 <!-- search chat -->
                 <div class="search-chat">
                     <div class="btn"><i class="fa-solid fa-magnifying-glass"></i></div>
-                    <input type="text" placeholder="Cerca o inizia una nuiova chat" v-model="searchingContact">
+                    <input type="text" placeholder="Cerca o inizia una nuiova chat" v-model="searchingContact" @keyup="filterContacts">
                 </div>
                 <!-- /search chat -->
 
@@ -58,7 +58,6 @@
                 <div class="contacts-list">
 
                     <div class="contact"
-                        
                         v-for="(contact, index) in contacts"
                         @click="showClicked(index)"
                         :class="[indexMain === index ? 'clickedContact' : '']">

@@ -241,7 +241,6 @@ img{
     font-size: 0.6rem;
 }
 
-
 .emoji-btn,
 .mic-btn{
     height: 100%;
@@ -304,6 +303,10 @@ img{
 
 .message .message-settings i{
     color: #757575;
+}
+
+.message .message-settings{
+    align-self: center;
 }
 
 .received{
