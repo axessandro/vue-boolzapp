@@ -58,6 +58,7 @@
                 <div class="contacts-list">
 
                     <div class="contact"
+                        v-show="contact.visible"
                         v-for="(contact, index) in contacts"
                         @click="showClicked(index)"
                         :class="[indexMain === index ? 'clickedContact' : '']">

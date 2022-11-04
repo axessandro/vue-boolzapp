@@ -194,10 +194,6 @@ createApp({
         
     },
 
-    created(){
-        setInterval(this.gettingHour, 1000)
-    },
-
     methods: {
         showClicked(index){
             this.indexMain = index;
@@ -205,7 +201,9 @@ createApp({
 
         sendMessage(){
             const messageToSend = {...this.newMessage};
-            this.gettingHour();
+            console.log(this.gettingHour());
+            messageToSend.date = this.gettingHour();
+            console.log(messageToSend);
             if(messageToSend.message != ''){
                 this.contacts[this.indexMain].messages.push(messageToSend);
                 setTimeout(this.botSendMessage, 1000);
@@ -218,22 +216,28 @@ createApp({
 
         botSendMessage(){
             const messageToSend = this.botMessage;
+            messageToSend.date = this.gettingHour();
             this.contacts[this.indexMain].messages.push(messageToSend);
         },
 
         gettingHour(){
             const now = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
-            console.log(now);
-            this.newMessage.date = now;
-            this.botMessage.date = now;
+            return now;
         },
 
         filterContacts(){
             for(let i = 0; i < this.contacts.length; i++){
                 const contact = this.contacts[i];
                 const contactName = contact.name.toLowerCase();
-                if (!contactName.includes(this.searchingContact.toLowerCase()) && searchingContact) {
-                    contact.visible = false
+                const filter = this.searchingContact.toLowerCase();
+                if (!contactName.includes(filter)) {
+                    contact.visible = false;
+                }
+                else if (filter === false){
+                    contact.visible = true;
+                }
+                else{
+                    contact.visible = true;
                 }
             }
             
