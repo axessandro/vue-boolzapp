@@ -4,6 +4,7 @@
 // nome e immagine di ogni contatto
 
 const{createApp} = Vue;
+const dt = luxon.DateTime;
 
 createApp({
     data(){
@@ -193,6 +194,10 @@ createApp({
         
     },
 
+    created(){
+        setInterval(this.gettingHour, 1000)
+    },
+
     methods: {
         showClicked(index){
             this.indexMain = index;
@@ -200,18 +205,32 @@ createApp({
 
         sendMessage(){
             const messageToSend = {...this.newMessage};
-            this.contacts[this.indexMain].messages.push(messageToSend);
-            this.newMessage.message = '';
-
-            setTimeout(this.botSendMessage, 1000);
+            this.gettingHour();
+            if(messageToSend.message != ''){
+                this.contacts[this.indexMain].messages.push(messageToSend);
+                setTimeout(this.botSendMessage, 1000);
+                this.newMessage.message = '';
+                this.newMessage.date = '';
+                this.botMessage.date = '';
+            }
+            
         },
 
         botSendMessage(){
             const messageToSend = this.botMessage;
             this.contacts[this.indexMain].messages.push(messageToSend);
-        }
+        },
+
+        searchingResults(){
+            
+        },
+
+        gettingHour(){
+            const now = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
+            console.log(now);
+            this.newMessage.date = now;
+            this.botMessage.date = now;
+        },
     },
 
 }).mount("#root");
-
-console.log(this.time);

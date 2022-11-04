@@ -171,7 +171,7 @@ img{
     position: relative;
 }
 
-.contact:hover,
+.side .contact:hover,
 .clickedContact{
     background-color: #2d2d2d;
 }
@@ -195,7 +195,7 @@ img{
 }
 
 .contact .last-message{
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 
 .contact .time{
@@ -281,12 +281,29 @@ img{
 
 .message{
     color: #0c0c0c;
-    padding: 1rem;
+    padding: 0.5rem;
     min-width: 30%;
     max-width: 60%;
     border-radius: 10px;
     margin-bottom: 0.8rem;
-    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.message .message-text{
+    color: black;
+    padding: 0.5rem;
+}
+
+.message .message-time{
+    color: black;
+    font-size: 0.7rem;
+    padding-left: 0.7rem;
+    align-self: flex-end;
+}
+
+.message .message-settings i{
+    color: #757575;
 }
 
 .received{
